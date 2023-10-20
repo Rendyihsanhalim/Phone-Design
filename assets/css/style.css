@@ -1,0 +1,349 @@
+
+/*=============== BASE ===============*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    font-family: "Poppins",sans-serif;
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+  }
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1122px;
+    margin-inline:2rem;
+  }
+
+.grid{
+  display: grid;
+}
+/*add blur header */
+.blur__header::after{
+  content:"";
+  position: absolute;
+  width: 1000%;
+  height:100%;
+  background-color: rgba(rgb(255, 255, 255),.2);
+  top:0;
+  left:0;
+  z-index: -1;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+}
+  /*=============== HEADER & NAV ===============*/
+  .header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    z-index:100;
+    transition: box-shadow .4s;
+
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+  
+  }
+
+  .nav__img{
+    width:3rem;
+    display: inline-flex;
+    filter: drop-shadow();
+    background-color: rgba(rgb(255, 255, 255),.2);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px)
+  }
+  
+  .nav__toggle,.nav__close{
+    display: flex;
+    font-size: 1.25rem;
+    color: black;
+    cursor: pointer;
+  }
+  /* Navigation for mobile devices */
+  @media screen and (max-width:1023px) {
+    .nav__menu{
+      width: 80%;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      background-color: rgb(248, 247, 247);
+      box-shadow: -1px 0 16px hsla(0, 0%, 0%,.1);
+      height: 100%;
+      padding:6rem 3rem;
+      transition: right .4s;
+      text-align: center;
+    }
+    .nav__logincart{
+      margin-top: 3rem;
+    }
+  }
+  
+  .nav__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+  }
+  
+  .nav__link{
+    color: black;
+    font-family: "Montserrat";
+    font-weight: bold;
+  }
+ .nav__logincart{
+    display: inline-flex;
+    column-gap: 3rem;
+}
+  .nav__close{
+    position:absolute;
+    top:1.125rem;
+    right:1.5rem;
+    color: var(--title-color);
+  }
+
+  .nav__login{
+    padding: .5rem 1rem;
+    font-family: "Montserrat";
+    border-radius: 0.75rem;
+    cursor: pointer;
+    border-style: none;
+    color: black;
+    font-weight: 600;
+  }
+
+
+  .nav__cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+  }
+  /* Show menu */
+  .show-menu{
+    right:0;
+  }
+  
+  /* Add shadow header */
+  .shadow-header{
+    box-shadow: 0 1px 16px hsla(0, 0%, 0%,.1);
+  }
+
+
+  /*=============== HOME ===============*/
+  .home{
+    margin-top: 6rem;
+  }
+
+  .home__container{
+    row-gap: 3rem;
+  }
+
+  .home__data{
+  text-align: center;   
+  }
+  .home__title{
+    font-weight: 700;
+    font-size: 3rem;
+    color: transparent;
+    background-image: linear-gradient(180deg,#ffb6ff,#b344ff);
+    -webkit-background-clip: text;
+    font-family: "San Francisco",sans-serif;
+    text-align: center;
+  }
+  .home__title2{
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: "San Francisco",sans-serif;
+    text-align: center;
+    color: rgb(209, 209, 209);
+  }
+
+  .home__description{
+    font-size: 1rem;
+    font-family: "Poppins";
+    font-weight: 300;
+    margin-top: 1.5rem;
+    text-align: center;
+
+  }
+  .home__container img{
+    width: 500px;
+    justify-self: center;
+  }
+
+  .home__button{
+    width: 9rem;
+    margin-top: 1.25rem;
+    border-radius: 1rem;
+    padding:.75rem 1rem;
+    font-family: "San Francisco",sans-serif;
+    font-size: 1rem;
+    border-style: none;
+    font-weight: 900;
+    cursor: pointer;
+    background-image: linear-gradient(90deg,white,#ffb6ff,#cd9af0);
+    box-shadow: 0 3px 5px hsla(305, 76%, 60%, 0.568);
+  }
+/*=============== DETAILS ===============*/
+.details{
+  margin-top: 9rem;
+}
+.details__container{
+  grid-template-rows: repeat(2,max-content);
+  row-gap: 3rem;
+
+}
+
+.details__content{
+  text-align: center;
+  font-family: "San Francisco";
+
+}
+
+.details__data{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+
+.details__gambar{
+  width:5rem;
+  height:5rem;
+  margin: auto;
+}
+
+.details__img{
+  width:500px;
+  justify-self: center;
+
+}
+
+.details__title{
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  color: transparent;
+  background-image: linear-gradient(180deg,#ffb6ff,#b344ff);
+  -webkit-background-clip: text;
+}
+
+.details_description{
+  font-size: 1.25rem;
+}
+
+  /*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+@media screen and (max-width:320px) {
+  .container{
+    margin-inline: 0.75rem;
+  }
+  .home__title{
+    font-size: 2rem;
+  }
+  .home__img{
+    width:5rem;
+  }
+}
+
+@media screen and (min-width:576px) {
+  .nav__menu{
+    width:60%;
+  }
+  .home__container{
+    grid-template-columns: 350px;
+    justify-content: center;
+
+  }
+
+  .home__data{
+    text-align: center;
+  }
+  .home__img{
+    width: 500px;
+  }
+  .home__title,.home__title2{
+    font-size: 3rem;
+  }
+  .details__container{
+    grid-template-rows: repeat(2,max-content);
+    justify-content: center;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width:1023px){
+  .nav{
+    height: calc(3.5rem+ 2rem);
+    width: 100%;
+    margin-inline:3.25rem;
+  }
+
+  .nav__toggle,.nav__close{
+    display: none;
+  }
+  .nav__menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+ .nav__list{
+  flex-direction: row;
+  column-gap: 4rem;
+ }
+ .home__container{
+  height: 500px;
+  grid-template-columns:800px 500px ;
+  place-items: center;
+  column-gap: 2rem;
+  margin-inline: 3.25rem;
+ }
+ .home__data{
+  width: 800px;
+ }
+  .home__title,.home__title2{
+    font-size: 5rem;
+  }
+
+  .details__img{
+    width: 500px;
+    justify-self: center;
+  }
+
+  .details{
+    margin-top:3rem;
+  }
+
+  .details1{
+    order:1;
+  }
+  .details__container{
+    grid-template-columns: repeat(2,600px);
+    column-gap: 4rem;
+    place-items: center;
+    margin-inline:3.5rem;
+  }
+}
